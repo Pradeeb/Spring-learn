@@ -34,10 +34,23 @@ public class Student {
 //		System.out.println("Student object is creadted");
 //	}
 	
+	
+	
 	public void show() {
 		System.out.println("This is stutdent");
 	}
 	
+	public Student(int age, int role, Writer write) {
+		super();
+		this.age = age;
+		this.role = role;
+		this.write = write;
+	}
+
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void write() {
 		write.write();
 	}

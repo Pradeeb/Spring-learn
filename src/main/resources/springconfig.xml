@@ -4,7 +4,7 @@
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="st1" class="com.spring.basic.Student" autowire="byName">  <!-- use byName to refer the bean ID name it match to the class object name  -->
+	<bean id="st1" class="com.spring.basic.Student" autowire="byName">  <!-- use byName to refer the bean ID name -> it match to the class object name  --> 
 	
 	    <!-- value is set use setter method  -->
 		<property name="age" value="30"/>
