@@ -1,6 +1,7 @@
 package com.transacationlearn;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.Optional;
 
@@ -26,7 +27,7 @@ class TransacationlearnApplicationTests {
     @Test
     public void testCreateLearn_Success() {
         // Arrange
-        String topic = "Spring Boot";
+        String topic = "Spring test";
         String description = "Testing createLearn() method";
 
         // Act
@@ -47,12 +48,8 @@ class TransacationlearnApplicationTests {
     public void testTransactionRollbackOnException() {
         long countBefore = learnRepository.count();
 
-        try {
-            // Simulate failure by calling service with null that may trigger exception
-            learnService.createLearn(null, "Will not be saved");
-        } catch (Exception e) {
-            System.err.println(e);
-        }
+        assertThatThrownBy(() -> learnService.createLearn(null, "Will not be saved"))
+        .isInstanceOf(IllegalArgumentException.class);
 
         long countAfter = learnRepository.count();
         assertThat(countAfter).isEqualTo(countBefore); // Ensure no data was persisted
