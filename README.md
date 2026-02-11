@@ -54,3 +54,18 @@ Rate limiting happens **before the request reaches the controller**.
     <artifactId>caffeine</artifactId>
     <version>3.1.8</version>
 </dependency>
+ ---
+
+## ⚙️ Rate Limit Configuration
+🔹 Per-IP Limit
+
+10 requests per minute per IP
+
+```code
+private Bucket createBucket() {
+    Bandwidth limit = Bandwidth.classic(
+            10,
+            Refill.intervally(10, Duration.ofMinutes(1))
+    );
+    return Bucket.builder().addLimit(limit).build();
+}
