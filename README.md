@@ -17,13 +17,13 @@ Rate limiting is implemented using a **Servlet Filter**, which executes before c
 
 ## 🏗 Architecture
 Client Request
-↓
+-->
 RateLimitFilter (Per-IP + Global Check)
-↓
+-->
 Controller
-↓
+-->
 Service
-↓
+-->
 Database
 
 
