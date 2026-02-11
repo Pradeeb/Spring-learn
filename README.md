@@ -54,7 +54,7 @@ Rate limiting happens **before the request reaches the controller**.
     <artifactId>caffeine</artifactId>
     <version>3.1.8</version>
 </dependency>
-xml```
+```
  ---
 
 ## ⚙️ Rate Limit Configuration
