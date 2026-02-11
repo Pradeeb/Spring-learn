@@ -43,7 +43,7 @@ Rate limiting happens **before the request reaches the controller**.
 
 ## 📦 Dependencies (Maven)
 
-```xml
+xml
 <dependency>
     <groupId>com.github.vladimir-bukhtoyarov</groupId>
     <artifactId>bucket4j-core</artifactId>
